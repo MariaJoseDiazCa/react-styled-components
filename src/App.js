@@ -28,7 +28,9 @@ function App() {
       <P>Hola soy un parrafo</P>
       <Button>Enviar</Button>
       <Button primary>Enviar</Button>
-      <BlockButton primary>Enviar</BlockButton>
+      <BlockButton primary as="a" href="#">
+        Enviar
+      </BlockButton>
     </Content>
   );
 }
