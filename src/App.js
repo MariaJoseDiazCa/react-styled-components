@@ -10,11 +10,26 @@ const Content = styled.div`
 `;
 
 const Button = styled.button`
+  transition: box-shadow 0.2s ease;
   background-color: ${(props) => (props.primary ? "red" : "white")};
   color: ${(props) => (props.primary ? "white" : "red")};
   padding: 10px 15px;
   border: solid 2px red;
   border-radius: 4px;
+
+  &:hover {
+    box-shadow: 1px 2px 5px rgb(0, 0, 0.3);
+  }
+
+  &.secondary {
+    background-color: blue;
+    border: solid 2px blue;
+    color: white;
+  }
+
+  .info {
+    font-size: 28px;
+  }
 `;
 
 const BlockButton = styled(Button)`
@@ -22,15 +37,31 @@ const BlockButton = styled(Button)`
   font-size: 24px;
 `;
 
+const Link = ({ className, ...props }) => {
+  return <a className={className} {...props}></a>;
+};
+
+const StyledLink = styled(Link)`
+  color: blue;
+`;
+
 function App() {
   return (
     <Content>
       <P>Hola soy un parrafo</P>
-      <Button>Enviar</Button>
+      <Button>
+        <p className="info">Info</p>
+      </Button>
+      <p></p>
       <Button primary>Enviar</Button>
-      <BlockButton primary as="a" href="#">
-        Enviar
-      </BlockButton>
+      <p></p>
+      <Button className="secondary">Enviar</Button>
+      <p></p>
+      <BlockButton primary>Enviar</BlockButton>
+      <p></p>
+      <Link>Link</Link>
+      <p></p>
+      <StyledLink>Link con estilo</StyledLink>
     </Content>
   );
 }
