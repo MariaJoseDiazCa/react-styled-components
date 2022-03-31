@@ -1,4 +1,4 @@
-# Shopping Cart
+# react-styled-components
 Small project to practice using styled-components in react.
 
 ### Tech
